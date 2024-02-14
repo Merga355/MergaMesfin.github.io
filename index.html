@@ -1,27 +1,4 @@
 
-<?php
-// Adjust the file path according to your directory structure
-include 'config.php';
-include 'contact.php';
-
-// Ensure the inclusion of config.php was successful before proceeding with database operations
-
-if ($con) {
-    $sql = "SELECT * FROM `user` WHERE `user`.`id` = 0";
-    $result = mysqli_query($con, $sql);
-
-    if ($result) {
-        $data = mysqli_fetch_assoc($result);
-        // Further processing with $data
-    } else {
-        // Handle the query error
-        echo "Error: " . mysqli_error($con);
-    }
-} else {
-    // Handle the case where the database connection couldn't be established
-    echo "Failed to connect to the database.";
-}
-?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -76,11 +53,7 @@ if ($con) {
       <div class="table-cell">
         <div class="container">
           <!--<p class="display-6 color-d">Hello, world!</p>-->
-          <h1 class="hero-title mb-4">I am <?php if ($data && isset($data['Name'])) { ?>
-        <p><span class="title-s"> </span><span><?php echo $data['Name']; ?></span></p>
-    <?php } else { ?>
-        <p>User data not found.</p>
-    <?php } ?></h1>
+          <h1 class="hero-title mb-4">I am Merga Mesfin </h1>
           <p class="hero-subtitle"><span class="typed" data-typed-items="Designer, Developer, Lecturer, Photo editor"></span></p>
           <!-- <p class="pt-3"><a class="btn btn-primary btn js-scroll px-4" href="#about" role="button">Learn More</a></p> -->
         </div>
@@ -111,9 +84,9 @@ if ($con) {
                     <?php } else { ?>
                         <p>User data not found.</p>
                     <?php } ?></span></p>
-                        <p><span class="title-s">Profile: </span> <span><?php echo $data['title']; ?></span></p>
-                        <p><span class="title-s">Email: </span> <span><?php echo $data['Email']; ?></span></p>
-                        <p><span class="title-s">Phone: </span> <span><?php echo $data['Phone']; ?></span></p>
+                        <p><span class="title-s">Profile: </span> <span>Developer</span></p>
+                        <p><span class="title-s">Email: </span> <span>margamasfin@gmail.com</span></p>
+                        <p><span class="title-s">Phone: </span> <span>+251913392804</span></p>
                       </div>
                     </div>
                   </div>
@@ -333,8 +306,8 @@ if ($con) {
                       </p>
                       <ul class="list-ico">
                         <li><span class="bi bi-geo-alt"></span> Bishoftu, oromia, Ethiopia</li>
-                        <li><span class="bi bi-phone"></span> <span><?php echo $data['Phone']; ?></span></li>
-                        <li><span class="bi bi-envelope"></span><span><?php echo $data['Email']; ?></span></li>
+                        <li><span class="bi bi-phone"></span> <span>+251913392804</span></li>
+                        <li><span class="bi bi-envelope"></span><span>margamasfin@gmail.com</span></li>
                       </ul>
                     </div>
                     <div class="socials">
